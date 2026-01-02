@@ -1,46 +1,85 @@
-#  FlappyFly: The Java Jumper
+# 🐤 FlappyFly: The Java Jumper
 
-##  Overview
-Welcome to **FlappyFly** , a classic rendition of the endlessly addictive *Flappy Bird* game, reimagined and built with the power of **Java Swing**! Navigate a cheerful pixelated bird through an endless series of pipes, testing your reflexes and aiming for the ultimate high score.
+[![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.oracle.com/java/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Swing](https://img.shields.io/badge/UI-Swing-blue.svg)](https://docs.oracle.com/javase/tutorial/uiswing/)
 
-This project serves as a fantastic example of basic game development in Java, covering:
-- Game loops
-- Collision detection
-- UI rendering
+Welcome to **FlappyFly**, a classic rendition of the endlessly addictive *Flappy Bird* game, reimagined and built with the power of **Java Swing**! Navigate a cheerful pixelated bird through an endless series of pipes, testing your reflexes and aiming for the ultimate record.
 
 ---
 
-##  Features
+## 🚀 Key Features
 
--  **Classic Gameplay**: Experience the familiar and challenging mechanics of the original Flappy Bird.
--  **Java Swing UI**: A pure Java implementation, making it accessible and easy to understand for beginners.
--  **Pixel Art Graphics**: Authentic pixel art assets (bird, pipes, background) for nostalgic visuals.
--  **Score Tracking**: Monitor your score and aim to beat your high score.
--  **Responsive Controls**: Simple and intuitive `SPACEBAR` control for flapping.
--  **Game State Management**: Clear `"Tap SPACE to Start!"` and `"GAME OVER!"` messages to guide the player.
-
----
-
-##  How to Play
-
-1. **Launch the Game**: Run the `App.java` file.
-2. **Start Flapping**: Press the `SPACEBAR` to make the bird jump.
-3. **Navigate Pipes**: Tap the `SPACEBAR` repeatedly to stay in the air and fly through pipe gaps.
-4. **Avoid Collisions**: Don't hit the pipes or the ground – or it's **Game Over**!
-5. **Restart**: After crashing, press the `SPACEBAR` again to try for a new high score.
+- 🎮 **Classic Mechanics**: Simple, challenging, and addictive gameplay.
+- 💾 **Persistent High Score**: Your best record is automatically saved to `highscore.txt` and loaded every time you play.
+- 🎨 **Retro Pixel Art**: Hand-crafted assets for that nostalgic arcade feel.
+- ⚡ **High-Performance Loop**: Smooth rendering and responsive collision detection.
+- 🛠️ **Swing Implementation**: Pure Java implementation, no heavy game engines required.
 
 ---
 
-##  Contributing
+## 🕹️ Controls
 
-Feel free to **fork** this repository, **open issues**, or **submit pull requests**. Any contributions, suggestions, or bug reports are welcome and appreciated!
+| Action | Control |
+| :--- | :--- |
+| **Flap / Jump** | `SPACEBAR` |
+| **Start / Restart** | `SPACEBAR` |
+
+---
+
+## 🏃 How to Run
+
+### Prerequisites
+- **Java JDK 8 or higher** installed on your system.
+
+### Steps
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/FlappyFly.git
+   cd FlappyFly
+   ```
+2. **Compile the source files**:
+   ```bash
+   javac App.java FlappyBird.java
+   ```
+3. **Execute the application**:
+   ```bash
+   java App
+   ```
 
 ---
 
-##  Acknowledgements
+## 📂 Project Structure
 
-- Inspired by the original **Flappy Bird** game.
-- Developed as a **learning exercise** in Java Swing.
+```text
+FlappyFly/
+├── App.java                # Application entry point & window setup
+├── FlappyBird.java         # Main game logic, rendering, and physics
+├── highscore.txt           # Persistent high score data (Auto-generated)
+├── flappybirdbg.png        # Background asset
+├── flappybird.png          # Bird sprite
+├── toppipe.png             # Pipe asset (top)
+└── bottompipe.png          # Pipe asset (bottom)
+```
 
 ---
-Enjoy the flight! ✈️🐤
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+*Enjoy the flight!* ✈️🐤

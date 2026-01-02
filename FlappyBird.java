@@ -1,12 +1,15 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 import javax.swing.*;
 
 public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     int boardWidth = 1200;
     int boardHeight = 640;
+    private static final String HIGH_SCORE_FILE = "highscore.txt";
 
     //images
     Image backgroundImg;
@@ -91,6 +94,33 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
         gameLoop = new Timer(1000 / 170, this);
         gameLoop.start();
+
+        loadHighScore();
+    }
+
+    private void loadHighScore() {
+        try {
+            File file = new File(HIGH_SCORE_FILE);
+            if (file.exists()) {
+                Scanner scanner = new Scanner(file);
+                if (scanner.hasNextDouble()) {
+                    highScore = scanner.nextDouble();
+                }
+                scanner.close();
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println("Could not load high score: " + e.getMessage());
+        }
+    }
+
+    private void saveHighScore() {
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter(HIGH_SCORE_FILE));
+            writer.println(highScore);
+            writer.close();
+        } catch (IOException e) {
+            System.err.println("Could not save high score: " + e.getMessage());
+        }
     }
 
     void placePipes() {
@@ -215,6 +245,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         if (gameOver) {
             if (score > highScore) {
                 highScore = score;
+                saveHighScore();
             }
             placePipeTimer.stop();
             gameLoop.stop();
